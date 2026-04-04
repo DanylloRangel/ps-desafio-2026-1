@@ -1,0 +1,5 @@
+$kind: http-request
+name: IndexCategory
+url: http://127.0.0.1:8000/category
+method: GET
+order: 1337032512116919

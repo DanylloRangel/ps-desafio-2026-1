@@ -1,0 +1,16 @@
+$kind: collection
+variables:
+  baseUrl: http://localhost:8000
+  authToken: ""
+scripts:
+  - type: http:beforeRequest
+    code: |-
+      pm.request.headers.add({key: 'Accept', value: 'application/json'})
+      pm.request.headers.add({key: 'Content-Type', value: 'application/json'})
+    language: text/javascript
+auth:
+  - id: 3449173f-d890-410e-bb17-25641b045e08
+    type: bearer
+    name: bearer auth
+    credentials:
+      token: "{{authToken}}"

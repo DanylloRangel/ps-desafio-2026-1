@@ -1,0 +1,8 @@
+$kind: http-request
+name: StoreCategory
+url: http://127.0.0.1:8000/
+method: POST
+body:
+  type: json
+  content: "{\r\n    \"name\": \"teste\"\r\n}"
+order: 4503505809860314

@@ -1,0 +1,5 @@
+$kind: http-request
+name: ShowCategory
+url: ""
+method: GET
+order: 3557034467299277

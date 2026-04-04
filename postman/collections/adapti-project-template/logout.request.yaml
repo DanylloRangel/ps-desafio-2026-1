@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{baseUrl}}/logout"
+method: POST
+scripts:
+  - type: afterResponse
+    code: |-
+      if (pm.response.code === 204) {
+          pm.collectionVariables.set('authToken', '')
+      }
+    language: text/javascript
+order: 3000

@@ -1,0 +1,5 @@
+$kind: http-request
+name: DeleteCategory
+url: ""
+method: DELETE
+order: 4444319317130356

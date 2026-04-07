@@ -1,0 +1,115 @@
+.productCard {
+    width: 280px; 
+    max-width: 100%;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    margin: 20px;
+}
+
+
+.productAmount {
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    background-color: black;
+    color: #ffffff;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.productImage {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.productName {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+    text-align: center;
+}
+
+.productCategory, .productBrand, .productYear {
+    font-size: 0.85rem;
+    color: black;
+    margin: 0;
+}
+
+.productPrice {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #3b82f6;
+    text-align: center; 
+    margin: 10px 0 0 0;
+}
+
+.productActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    gap: 8px;
+}
+
+.decrement, .increase {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #1a1a1a;
+    background-color: #fff;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.decrement:hover, .increase:hover {
+    background-color: #f0f0f0;
+}
+
+.quantityDisplay {
+    font-weight: bold;
+    font-size: 1.1rem;
+    min-width: 20px;
+    text-align: center;
+}
+
+.addToCartButton {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex-grow: 1;
+    margin-left: 5px;
+}
+
+.addToCartButton:hover {
+    background-color: #2563eb; 
+}

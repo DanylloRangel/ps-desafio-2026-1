@@ -2,4 +2,4 @@
 .vscode
 .idea
 .fleet
-.postman
+/postman

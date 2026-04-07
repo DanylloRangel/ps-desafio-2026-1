@@ -1,8 +1,0 @@
-$kind: http-request
-name: UpdateCategory
-url: ""
-method: PUT
-body:
-  type: json
-  content: ""
-order: 4103930304969743

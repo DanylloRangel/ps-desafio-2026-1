@@ -1,4 +1,0 @@
-$kind: http-request
-url: "{{baseUrl}}/users/9bf91fe4-4784-4891-b320-952ca01ba14d"
-method: GET
-order: 6000

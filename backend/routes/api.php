@@ -20,6 +20,8 @@ Route::get('/category/{id}', [CategoryController::class, 'show']);
 Route::get('/sports-articles', [SportsArticleController::class, 'index']);
 Route::get('/sports-articles/{id}', [SportsArticleController::class, 'show']);
 
+Route::post('/sports-articles/{id}/buy', [SportsArticleController::class, 'buy']);
+
 Route::middleware(['auth:sanctum', 'can:admin'])->group(function () {
     Route::apiResource('/users', UserController::class);
 

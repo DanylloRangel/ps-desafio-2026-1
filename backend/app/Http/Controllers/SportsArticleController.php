@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateSportsArticleRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Js;
 use Nette\Utils\Json;
+use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
@@ -91,5 +92,21 @@ class SportsArticleController extends Controller
 
         return response()->json(['message' => 'Artigo esportivo deletado com sucesso!']);
 
+    }
+
+    public function buy(Request $request, $id): JsonResponse
+    {
+        $quantity = $request->input('quantity');
+
+        $sportsArticle = $this->sportsArticle->findOrFail($id);
+
+        if ($quantity > $sportsArticle->amount) {
+            return response()->json(['message' => 'Quantidade inválida!']);
+        }
+
+        $sportsArticle->amount -= $quantity;
+        $sportsArticle->save();
+
+        return response()->json(['message' => 'Compra realizada com sucesso!']);
     }
 }

@@ -23,13 +23,9 @@ Route::get('/sports-articles/{id}', [SportsArticleController::class, 'show']);
 Route::middleware(['auth:sanctum', 'can:admin'])->group(function () {
     Route::apiResource('/users', UserController::class);
 
-    Route::post('/category', [CategoryController::class, 'store']);
-    Route::put('/category/{id}', [CategoryController::class, 'update']);
-    Route::delete('/category/{id}', [CategoryController::class, 'destroy']);
+    Route::apiResource('/category', CategoryController::class)->except(['index', 'show']);
 
-    Route::post('/sports-articles', [SportsArticleController::class, 'store']);
-    Route::put('/sports-articles/{id}', [SportsArticleController::class, 'update']);
-    Route::delete('/sports-articles/{id}', [SportsArticleController::class, 'destroy']);
+    Route::apiResource('/sports-articles', SportsArticleController::class)->except(['index', 'show']);
 
 });
 

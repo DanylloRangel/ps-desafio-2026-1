@@ -30,10 +30,10 @@ export function DialogInformationSportsItem({
 
   useEffect(() => {
     const requestData = async () => {
-      const { response } = null
+      const { response } = await api('GET', `/sports-articles/${id}`)
 
       if (response) {
-        setSportsItem(response)
+        setSportsItem(response as sportsItemType)
       } else {
         setSportsItem(null)
         toast({
@@ -58,7 +58,9 @@ export function DialogInformationSportsItem({
             Visualize as informações detalhadas do artigo esportivo abaixo.
           </DialogDescription>
         </DialogHeader>
-        <FormFieldsSportsItem sportsItem={sportsItem} readOnly />
+        {sportsItem && (
+          <FormFieldsSportsItem sportsItem={sportsItem} readOnly />
+        )}
       </DialogContent>
     </Dialog>
   )

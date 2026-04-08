@@ -1,3 +1,5 @@
+'use client'
+
 import { DashboardContainer } from '@/components/dashboard/dashboard-items'
 import {
   TabbleCellImage,
@@ -17,19 +19,32 @@ import { DialogUpdateSportsItem } from './dialog-update-sports-item'
 import { DialogSportsItemDelete } from './dialog-delete-sports-item'
 import { DialogInformationSportsItem } from './dialog-information-sports-item'
 import { DialogCreateSportsItem } from './dialog-create-sports-item'
+import { useState, useEffect } from 'react'
 
 export default async function ListSportsItems() {
-  const { response } = null // requisicao para api
+  const [sportsItems, setSportsItems] = useState<sportsItemType[]>([])
 
-  if (!response) {
+  useEffect(() => {
+    const getSportsItems = async () => {
+      const { response, error } = await api('GET', '/sports-articles')
+
+      if (response) {
+        setSportsItems(response as sportsItemType[])
+      } else {
+        console.error(error?.message)
+      }
+    }
+
+      getSportsItems()
+  }, [])
+
+  if (!sportsItems) {
     return (
       <DashboardContainer className="text-destructive">
         Não foi possível obter os imóveis.
       </DashboardContainer>
     )
   }
-
-  const sportsItems: sportsItemType[] = response
 
   return (
     <>
@@ -46,9 +61,12 @@ export default async function ListSportsItems() {
           <TableHeader>
             <TableRow>
               <TableHead>Imagem</TableHead>
-              <TableHead>Titulo</TableHead>
-              <TableHead>Categoria</TableHead>
+              <TableHead>Nome</TableHead>
+              <TableHead>Marca</TableHead>
+              <TableHead>Preço</TableHead>
+              <TableHead>Ano</TableHead>
               <TableHead>Quantidade</TableHead>
+              <TableHead>Categoria</TableHead>
               <TableHead className="text-right">Ações</TableHead>
             </TableRow>
           </TableHeader>
@@ -58,12 +76,14 @@ export default async function ListSportsItems() {
                 <TableCell>
                   <TabbleCellImage src={sportsItem.image} />
                 </TableCell>
-                
-                <TableCell>{sportsItem.title}</TableCell>
+                <TableCell>{sportsItem.name}</TableCell>
+                <TableCell>{sportsItem.brand}</TableCell>
+                <TableCell>{sportsItem.price}</TableCell>
+                <TableCell>{sportsItem.year}</TableCell>
                 <TableCell>{sportsItem.amount}</TableCell>
                 <TableCell>{sportsItem.category.name}</TableCell>
-                {/* demais propriedades de sportsItemType */}
                 
+
                 <TableCell className="flex justify-end gap-2">
                   <DialogInformationSportsItem id={sportsItem.id}>
                     <Button variant="default-inverse" size="icon">

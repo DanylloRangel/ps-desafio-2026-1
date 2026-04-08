@@ -11,7 +11,6 @@ export default function Products() {
 
     useEffect(() => {
         async function getProducts() {
-            console.log('Fetching products...');
             const {response, error } = await api('GET', '/sports-articles');
 
             if(response){
@@ -23,63 +22,6 @@ export default function Products() {
         }
         getProducts();
     }, []);
-
-/*     const product: sportsItemType[] = [
-        {
-            id: '1',
-            name: 'Tênis de Corrida',
-            brand: 'Nike',
-            price: 299.99,
-            year: 2023,
-            image: 'https://picsum.photos/300/200?random=1',
-            category_id: '1',
-            amount: 10
-        },
-
-        {
-            id: '2',
-            name: 'Tênis de Corrida',
-            brand: 'Nike',
-            price: 299.99,
-            year: 2023,
-            image: 'https://picsum.photos/300/200?random=2',
-            category_id: '1',
-            amount: 10
-        },
-
-        {
-            id: '3',
-            name: 'Tênis de Corrida',
-            brand: 'Nike',
-            price: 299.99,
-            year: 2023,
-            image: 'https://picsum.photos/300/200?random=3',
-            category_id: '1',
-            amount: 10
-        },
-
-        {
-            id: '4',
-            name: 'Tênis de Corrida',
-            brand: 'Nike',
-            price: 299.99,
-            year: 2023,
-            image: 'https://picsum.photos/300/200?random=4',
-            category_id: '1',
-            amount: 10
-        },
-
-        {
-            id: '5',
-            name: 'Tênis de Corrida',
-            brand: 'Nike',
-            price: 299.99,
-            year: 2023,
-            image: 'https://picsum.photos/300/200?random=5',
-            category_id: '1',
-            amount: 10
-        }
-    ] */
     
     return (
         <section className={styles.products}>

@@ -26,14 +26,14 @@ class SportsArticle extends Model
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
-    protected static function booted(){
-        self::deleted(function ($sportsArticle) {
-            if ($sportsArticle->image){
-                try {
-                    $image_name = explode('sportsarticle/', $sportsArticle['image']);
-                    Storage::disk('public')->delete('SportsArticles/'.$image_name[1]);
-                } catch (Throwable){}
-            }
+    protected static function booted()
+    {
+        self::deleted(function (SportsArticle $sportsArticle) {
+            try {
+                $image_name = explode('sportsArticles/', $sportsArticle['image']);
+                Storage::disk('public')->delete('sportsArticles/' . $image_name[1]);
+            } catch (Throwable) {}
+
         });
     }
 }

@@ -38,7 +38,7 @@ class SportsArticleController extends Controller
         $data = $request->validated();
 
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('SportsArticles', 'public');
+            $path = $request->file('image')->store('sportsArticles', 'public');
             $data['image'] = url('storage/'.$path); 
         }
 
@@ -68,16 +68,14 @@ class SportsArticleController extends Controller
 
         if ($request->hasFile('image')) {
             try {
-                $image_name = explode('sportsarticle/', $sportsArticle['image']);
-                Storage::disk('public')->delete('SportsArticles/'.$image_name[1]);
+                $image_name = explode('sportsArticles/', $sportsArticle['image']);
+                Storage::disk('public')->delete('sportsArticles/'.$image_name[1]);
             } catch (Throwable) {}
             finally {
-                $path = $request->file('image')->store('SportsArticles', 'public');
+                $path = $request->file('image')->store('sportsArticles', 'public');
                 $data['image'] = url('storage/'.$path);
             }
         }
-
-        $data = $request->validated();
 
         $sportsArticle->update($data);
         return response()->json($sportsArticle, Response::HTTP_OK);

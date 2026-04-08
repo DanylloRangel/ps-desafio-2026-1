@@ -67,13 +67,13 @@ export default function FormFieldsSportsItem({
           <Label htmlFor="name" required = {!sportsItem}>
             Nome
           </Label>
-          <Input name="name" id="name" placeholder="Insira o nome do artigo esportivo" type="text" disabled={pending} defaultValue={sportsItem?.name} error={error?.errors?.name}/>
+          <Input name="name" id="name" placeholder="Insira o nome do artigo esportivo" type="text" disabled={pending} readOnly={readOnly} defaultValue={sportsItem?.name} error={error?.errors?.name}/>
         </FormField>
         <FormField>
           <Label htmlFor="brand" required = {!sportsItem}>
             Marca
           </Label>
-          <Input name="brand" id="brand" placeholder="Insira a marca do artigo esportivo" type="text" disabled={pending} defaultValue={sportsItem?.brand} error={error?.errors?.brand}/>
+          <Input name="brand" id="brand" placeholder="Insira a marca do artigo esportivo" type="text" disabled={pending} readOnly={readOnly} defaultValue={sportsItem?.brand} error={error?.errors?.brand}/>
         </FormField>
         <FormField>
           <Label htmlFor="price" required = {!sportsItem}>

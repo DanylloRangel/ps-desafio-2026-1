@@ -52,7 +52,7 @@ export default function ProductCard(product: sportsItemType){
                 <button className={style.decrement} onClick={decrement}>-</button>
                 <span className={style.quantityDisplay}>{Quantidade}</span>
                 <button className={style.increase} onClick={increment}>+</button>
-                {product.amount > 1 ?(
+                {product.amount > 0 ?(
                     <button className={style.addToCartButton} onClick={comprar}>
                         Comprar
                     </button>

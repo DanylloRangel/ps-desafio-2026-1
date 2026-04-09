@@ -16,7 +16,7 @@ export default function Footer() {
             <div className={styles.contactSection}>
                 <h3 className={styles.title}>Contato</h3>
                 <ul className={styles.list}>
-                    <li><a>Instagran: </a><a className={styles.contactLink} href="/">@wolfsport</a></li>
+                    <li><a>Instagram: </a><a className={styles.contactLink} href="/">@wolfsport</a></li>
                     <li><a>E-mail: </a><a className={styles.contactLink} href="/">suporte@wolfsport.com.br</a>
                     </li>
                 </ul>

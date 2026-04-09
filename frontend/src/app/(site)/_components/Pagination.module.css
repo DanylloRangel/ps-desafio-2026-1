@@ -1,0 +1,43 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+    
+.prev, .next {
+    text-align: center;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #1a1a1a;
+    background-color: #fff;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.page{
+    font-weight: bold;
+    font-size: 1.1rem;
+    min-width: 20px;
+    text-align: center;
+    margin: 10px;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.prev:hover, .next:hover {
+    background-color: #ccc;
+}
+
+.prev.disabled, .next.disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

@@ -8,7 +8,7 @@
     flex-direction: column;
     background-color: #ffffff;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    margin: 20px;
+    margin: 20px auto;
 }
 
 
@@ -87,7 +87,7 @@
 }
 
 .decrement:hover, .increase:hover {
-    background-color: #f0f0f0;
+    background-color: #ccc;
 }
 
 .quantityDisplay {
@@ -111,5 +111,10 @@
 }
 
 .addToCartButton:hover {
-    background-color: #2563eb; 
+    background-color: black; 
+}
+
+.productCard:hover {
+    scale: 1.02;
+    transition: 0.3s;
 }

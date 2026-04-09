@@ -9,9 +9,8 @@ export default function Header() {
         <Image src="/assets/images/logo.png" alt="Logo" width={100} height={100} />
         <div className ={styles.headerLinks}>
             <Link className={styles.headerLink} href= "#products">Produtos</Link>
-            <Link className={styles.headerLink} href="/">Categorias</Link>
-            <Link className={styles.headerLink} href="/">Sobre nós</Link>
-            <Link className={styles.headerLink} href="/">Contato</Link>
+            <Link className={styles.headerLink} href="#footer">Sobre nós</Link>
+            <Link className={styles.headerLink} href="#footer">Contato</Link>
         </div>
       </div>
     </header>

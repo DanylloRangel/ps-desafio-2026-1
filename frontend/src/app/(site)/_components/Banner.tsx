@@ -25,12 +25,12 @@ export default function Banner() {
         </SwiperSlide>
         <SwiperSlide>
           <div className={styles.container}>
-            <Image className={styles.bannerImage} src="/assets/images/banner1.png" alt="Banner" fill />
+            <Image className={styles.bannerImage} src="/assets/images/banner2.png" alt="Banner" fill />
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className={styles.container}>
-            <Image className={styles.bannerImage} src="/assets/images/banner1.png" alt="Banner" fill />
+            <Image className={styles.bannerImage} src="/assets/images/banner3.png" alt="Banner" fill />
           </div>
         </SwiperSlide>
       </Swiper>

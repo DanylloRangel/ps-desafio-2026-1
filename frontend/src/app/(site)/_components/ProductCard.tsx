@@ -40,9 +40,9 @@ export default function ProductCard(product: sportsItemType){
             <Image className={style.productImage} src={product?.image || '/assets/images/default.png'} alt="Product Image" width={200} height={200} />
             <div className={style.productInfo}>
                 <h3 className={style.productName}>{product.name}</h3>
-                <p className={style.productCategory}>{product.category.name}</p>
-                <p className={style.productBrand}>{product.brand}</p>
-                <p className={style.productYear}>{product.year}</p>
+                <p className={style.productCategory}>{'Categoria: ' + product.category.name}</p>
+                <p className={style.productBrand}>{'Marca: ' + product.brand}</p>
+                <p className={style.productYear}>{'Ano: ' + product.year}</p>
                 <p className={style.productPrice}>R$ {product.price}</p>
                 <p className={style.productAmount}>{product.amount} em estoque</p>
             </div>

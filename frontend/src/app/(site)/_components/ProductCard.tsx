@@ -8,6 +8,7 @@ import { buySportsItem } from '@/actions/sportsItem';
 
 export default function ProductCard(product: sportsItemType){
     const [Quantidade, setQuantidade] = useState(1);
+    const formattedPrice = (Number(product?.price)).toFixed(2).replace(".", ",");
     
 
     const decrement = () => {
@@ -43,7 +44,7 @@ export default function ProductCard(product: sportsItemType){
                 <p className={style.productCategory}>{'Categoria: ' + product.category.name}</p>
                 <p className={style.productBrand}>{'Marca: ' + product.brand}</p>
                 <p className={style.productYear}>{'Ano: ' + product.year}</p>
-                <p className={style.productPrice}>R$ {product.price}</p>
+                <p className={style.productPrice}>R$ {formattedPrice}</p>
                 <p className={style.productAmount}>{product.amount} em estoque</p>
             </div>
             <div className={style.productActions}>

@@ -6,15 +6,22 @@ import ProductCard from './ProductCard';
 import {useEffect, useState} from 'react';
 import {api} from '@/services/api';
 import Pagination from './Pagination';
+import { useSearchParams } from 'next/navigation';
 
 export default function Products() {
     const [product, setProduct] = useState<sportsItemType[]>([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [productPerPage, setProductPerPage] = useState(6);
 
+    const searchParams = useSearchParams();
+    const categoryId = useSearchParams().get("category_id");
+
+
     useEffect(() => {
         async function getProducts() {
-            const {response, error } = await api('GET', '/sports-articles');
+            const res = categoryId ? `/sports-articles?category_id=${categoryId}` : "/sports-articles";
+
+            const { response, error } = await api("GET", res);
 
             if(response){
                 setProduct(response as sportsItemType[]);
@@ -24,7 +31,7 @@ export default function Products() {
             }
         }
         getProducts();
-    }, []);
+    }, [categoryId]);
 
     const indexOfLastProduct = currentPage * productPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productPerPage;

@@ -25,9 +25,14 @@ class SportsArticleController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        $sportsArticle = $this->sportsArticle->with('category')->get();
+        $query = $this->sportsArticle->with('category');
+
+        if($request->has('category_id')){
+            $query->where('category_id', $request->input('category_id'));
+        }
+        $sportsArticle = $query->get();
         return response()->json($sportsArticle, Response::HTTP_OK);
     }
 

@@ -24,7 +24,7 @@ class StoreSportsArticleRequest extends FormRequest
         return [
             "name" => ["required", "min:5", "max:100"],
             "brand" => ["required", "min:5", "max:100"],
-            "price" => ["required", "decimal:2"],
+            "price" => ["required", "numeric"],
             "year" => ["required", "integer"],
             "image" => ["file"],
             "amount" => ["required", "integer"],

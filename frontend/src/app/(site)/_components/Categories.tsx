@@ -30,7 +30,7 @@ export default function Categories() {
     <section className="products" id="products">
       <div className={styles.container}>
         <h1 id="categorias" className={styles.title}>
-          CATEGORIAS
+          Categorias
         </h1>
 
         <div className={styles.productList}>

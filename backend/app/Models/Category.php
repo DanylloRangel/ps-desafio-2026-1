@@ -19,5 +19,14 @@ class Category extends Model
     public function sportsArticles(){
         return $this->hasMany(SportsArticle::class, 'category_id', 'id');
     }
+
+    protected static function booted()
+    {
+        self::deleting(function(Category $category){
+            if($category->sportsArticles()->count() > 0){
+                throw new \Exception('Não é possível deletar uma categoria que possui produtos vinculados');
+            }
+        });
+    }
 }
 
